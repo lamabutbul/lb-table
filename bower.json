@@ -4,7 +4,9 @@
   "main": "",
   "license": "MIT",
   "homepage": "",
-  "private": true,
+  "authors": [
+    "Moshe Abutbul <lamabutbul@gmail.com>"
+  ],
   "dependencies": {
     "angular": "^1.5.8",
     "js-data-angular": "^3.2.1",
