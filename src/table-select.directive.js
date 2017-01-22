@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('lbTable').directive('lbTableSelect', [function(){
+angular.module('lbTable').directive('lbTableSelect', ['$parse', function($parse){
     return {
         restrict: 'A',
         require: 'lbTable',
@@ -10,11 +10,14 @@ angular.module('lbTable').directive('lbTableSelect', [function(){
         }],
         link: function($scope, $element, $attrs, lbTableController){
             var ctrl = $scope.lbTableSelectController;
-            var model = ctrl.model = lbTableController.select = {
+
+            var model = ctrl.model = lbTableController.select = $parse($attrs.lbTableSelect)($scope);
+
+            angular.extend(model, {
                 '*': false,
                 in: {},
                 nin: {},
-            };
+            });
 
             ctrl.selectAll = function(){
                 model['*'] = true;

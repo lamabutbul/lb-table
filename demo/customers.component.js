@@ -2,13 +2,23 @@
 
 angular.module('lbTable.demo').component('customers', {
     template: `
-        <table lb-table="customersController.customers" lb-table-service="customersService" lb-table-select>
+        <table lb-table="customersController.customers"
+               lb-table-service="customersService"
+               lb-table-select="customersController.select"
+               lb-table-filters="customersController.filters"
+        >
             <head>
                 <tr>
                     <th lb-table-select-all></th>
                     <th>#</th>
                     <th>First name</th>
                     <th>Last name</th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th lb-table-filter="first_name__like"></th>
+                    <th lb-table-filter="last_name__like"></th>
                 </tr>
             </thead>
             <tbody>
@@ -22,7 +32,15 @@ angular.module('lbTable.demo').component('customers', {
         </table>
     `,
     controllerAs: 'customersController',
-    controller: [function(){
+    controller: ['$scope', function($scope){
+        var ctrl = this;
 
+        ctrl.select = {};
+
+        ctrl.filters = {};
+
+        $scope.$watch('customersController.select', function(){
+            console.log(ctrl.select);
+        }, true);
     }],
 });
