@@ -12,7 +12,7 @@ angular.module('lbTable').directive('lbTableService', ['$injector', function($in
 
             // init
             service.findAll().then(function(){
-                unbind = service.bindAll({}, $scope, $attrs.table);
+                unbind = service.bindAll({}, $scope, $attrs.lbTable);
             });
         }
     };
