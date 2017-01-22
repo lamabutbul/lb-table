@@ -1,0 +1,14 @@
+{
+  "name": "lb-table",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.8",
+    "js-data-angular": "^3.2.1",
+    "underscore": "^1.8.3",
+    "angular-ui-router": "^0.3.1"
+  }
+}

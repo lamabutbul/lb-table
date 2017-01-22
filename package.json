@@ -1,0 +1,13 @@
+{
+  "name": "lb-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {},
+  "author": "Moshe Abutbul <lamabutbul@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.1.0"
+  }
+}
