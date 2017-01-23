@@ -11,7 +11,7 @@ angular.module('lbTable').directive('lbTableSelect', ['$parse', function($parse)
         link: function($scope, $element, $attrs, lbTableController){
             var ctrl = $scope.lbTableSelectController;
 
-            var model = ctrl.model = lbTableController.select = $parse($attrs.lbTableSelect)($scope);
+            var model = ctrl.model = lbTableController.state.select = $parse($attrs.lbTableSelect)($scope);
 
             angular.extend(model, {
                 '*': false,

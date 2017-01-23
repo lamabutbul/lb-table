@@ -6,13 +6,14 @@ angular.module('lbTable.demo').component('customers', {
                lb-table-service="customersService"
                lb-table-select="customersController.select"
                lb-table-filters="customersController.filters"
+               lb-table-sortable="customersController.sort"
         >
             <head>
                 <tr>
                     <th lb-table-select-all></th>
                     <th>#</th>
-                    <th>First name</th>
-                    <th>Last name</th>
+                    <th lb-table-sort="first_name">First name</th>
+                    <th lb-table-sort="last_name">Last name</th>
                 </tr>
                 <tr>
                     <th></th>
@@ -37,10 +38,16 @@ angular.module('lbTable.demo').component('customers', {
 
         ctrl.select = {};
 
+        ctrl.sort = [];
+
         ctrl.filters = {};
 
         $scope.$watch('customersController.select', function(){
-            console.log(ctrl.select);
+            console.log('ctrl.select', ctrl.select);
+        }, true);
+
+        $scope.$watch('customersController.sort', function(){
+            console.log('ctrl.sort', ctrl.sort);
         }, true);
     }],
 });

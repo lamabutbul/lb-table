@@ -10,6 +10,10 @@ angular.module('lbTable').directive('lbTable', [function(){
             var state = ctrl.state = {
                 
             };
+
+            var pipe = ctrl.pipe = function(){
+
+            };
         }]
     };
 }]);
