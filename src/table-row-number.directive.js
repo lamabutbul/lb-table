@@ -5,7 +5,7 @@ angular.module('lbTable').directive('lbTableRowNumber', [function(){
         restrict: 'A',
         require: '^^lbTable',
         template: `
-            <span ng-bind="::$index + 1"></span>
+            <span ng-bind="$index + 1"></span>
         `,
         link: function($scope, $element, $attrs, lbTableController){
             
