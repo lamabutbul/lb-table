@@ -9,9 +9,9 @@ angular.module('lbTable').directive('lbTableSortable', ['$parse', function($pars
             
         }],
         link: function($scope, $element, $attrs, lbTableController){
-            var ctrl = $scope.lbTableSortableController;
+            let ctrl = $scope.lbTableSortableController;
 
-            var model = ctrl.model = lbTableController.state.sort = $parse($attrs.lbTableSortable)($scope);
+            let model = ctrl.model = lbTableController.state.sort = $parse($attrs.lbTableSortable)($scope);
 
             ctrl.sort = function(key){
                 let direction = 1;
@@ -23,6 +23,7 @@ angular.module('lbTable').directive('lbTableSortable', ['$parse', function($pars
                 }
                 model.push([key, direction]);
                 lbTableController.pipe();
+                return direction;
             };
         }
     };

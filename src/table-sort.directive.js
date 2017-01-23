@@ -7,10 +7,17 @@ angular.module('lbTable').directive('lbTableSort', [function(){
         link: function($scope, $element, $attrs, lbTableSortableController){
             $element.addClass('lb-sortable');
 
-            var key = $attrs.lbTableSort;
+            let key = $attrs.lbTableSort;
 
             $element.on('click', function($event){
-                lbTableSortableController.sort(key);
+                let direction = lbTableSortableController.sort(key);
+                $element.parent().children().removeClass('lb-sort-asc lb-sort-desc');
+                if (direction > 0) {
+                    $element.addClass('lb-sort-asc');
+                }
+                else {
+                    $element.addClass('lb-sort-desc');
+                }
                 $scope.$apply();
             });
         }

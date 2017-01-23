@@ -8,7 +8,7 @@ angular.module('lbTable.demo').component('customers', {
                lb-table-filters="customersController.filters"
                lb-table-sortable="customersController.sort"
         >
-            <head>
+            <thead>
                 <tr>
                     <th lb-table-select-all></th>
                     <th>#</th>
@@ -34,7 +34,7 @@ angular.module('lbTable.demo').component('customers', {
     `,
     controllerAs: 'customersController',
     controller: ['$scope', function($scope){
-        var ctrl = this;
+        let ctrl = this;
 
         ctrl.select = {};
 
