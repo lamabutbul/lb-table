@@ -4,7 +4,7 @@ angular.module('lbTable').directive('lbTableService', ['$injector', function($in
     function tableStateToFindParams(state) {
         let params = {};
 
-        if (state.sort.length) {
+        if (state.sort && state.sort.length) {
             let sort = [];
             for (let i = 0; i < state.sort.length; i++) {
                 sort.push((state.sort[i][1] > 0 ? '' : '-') + state.sort[i][0]);
@@ -18,7 +18,7 @@ angular.module('lbTable').directive('lbTableService', ['$injector', function($in
     function tableStateToBindParams(state) {
         let params = {};
 
-        if (state.sort.length) {
+        if (state.sort && state.sort.length) {
             let sort = [];
             for (let i = 0; i < state.sort.length; i++) {
                 sort.push([state.sort[i][0], state.sort[i][1] > 0 ? 'ASC' : 'DESC']);
