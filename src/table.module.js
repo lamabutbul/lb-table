@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('lbTable', []);
+const lbTableModule = angular.module('lbTable', []);
